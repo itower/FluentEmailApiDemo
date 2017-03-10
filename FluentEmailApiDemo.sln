@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGenericEmailApiDemo", "FunctionalGenericsExample\FluentGenericEmailApiDemo.csproj", "{5DA17BB4-6A49-4CA0-AC60-DB186756C091}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGenericEmailApiDemo", "FluentGenericsExample\FluentGenericEmailApiDemo.csproj", "{5DA17BB4-6A49-4CA0-AC60-DB186756C091}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGenericApiDemo", "GenericsEmailDemo\FluentGenericApiDemo.csproj", "{24B22EBB-8AD4-4550-AD1B-5E87854F1D53}"
 EndProject

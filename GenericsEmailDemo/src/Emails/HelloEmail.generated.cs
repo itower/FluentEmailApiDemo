@@ -17,12 +17,12 @@ namespace ASP
     using System.Text;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    internal partial class _src_Emails_GenericEmail_cshtml : RazorGenerator.Templating.RazorTemplateBase
+    public partial class _src_Emails_HelloEmail_cshtml : RazorGenerator.Templating.RazorTemplateBase
     {
 #line hidden
-        #line 2 "..\..\src\Emails\GenericEmail.cshtml"
+        #line 2 "..\..\src\Emails\HelloEmail.cshtml"
             
-    public dynamic Model { get; set; }
+    public dynamic Name { get; set; }
 
         #line default
         #line hidden
@@ -31,7 +31,16 @@ namespace ASP
         {
 WriteLiteral("\r\n");
 
-WriteLiteral("\r\n<div>\r\n</div>");
+WriteLiteral("\r\n<p>Hello ");
+
+            
+            #line 6 "..\..\src\Emails\HelloEmail.cshtml"
+    Write(Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p>");
 
         }
     }
