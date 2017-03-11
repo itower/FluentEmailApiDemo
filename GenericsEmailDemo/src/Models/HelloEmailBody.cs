@@ -1,6 +1,6 @@
 ﻿namespace FluentGenericApiDemo.src.Models
 {
-    public class HelloEmailBody
+    public partial class HelloEmailBody 
     {
         public string Name { get; set; }
     }

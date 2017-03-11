@@ -9,40 +9,41 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASP
+namespace GenericsEmailDemo.src.Emails
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
+    using System.Net;
     using System.Text;
+    using System.Web;
+    using System.Web.Helpers;
+    using System.Web.Mvc;
+    using System.Web.Mvc.Ajax;
+    using System.Web.Mvc.Html;
+    using System.Web.Routing;
+    using System.Web.Security;
+    using System.Web.UI;
+    using System.Web.WebPages;
+    
+    #line 5 "..\..\src\Emails\FluentEmailHelp.cshtml"
+    using FluentGenericApiDemo.src.Models;
+    
+    #line default
+    #line hidden
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
-    public partial class _src_Emails_FluentEmailHelp_cshtml : RazorGenerator.Templating.RazorTemplateBase
+    public class FluentEmailHelp : System.Web.WebPages.HelperPage
     {
-#line hidden
-        #line 2 "..\..\src\Emails\FluentEmailHelp.cshtml"
+        
+        #line 6 "..\..\src\Emails\FluentEmailHelp.cshtml"
             
-    public dynamic Number { get; set; }
+    public FluentEmailBody Body { get; set; }
 
         #line default
         #line hidden
         
-        public override void Execute()
-        {
-WriteLiteral("\r\n");
-
-WriteLiteral("\r\n<p> Hello user #");
-
-            
-            #line 6 "..\..\src\Emails\FluentEmailHelp.cshtml"
-           Write(Number);
-
-            
-            #line default
-            #line hidden
-WriteLiteral("</p>");
-
-        }
     }
 }
 #pragma warning restore 1591

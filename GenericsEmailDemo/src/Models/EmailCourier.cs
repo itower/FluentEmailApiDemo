@@ -5,7 +5,6 @@
     using System.Configuration;
     using System.Diagnostics;
     using System.IO;
-    using System.Linq;
     using System.Net;
     using System.Net.Mail;
     using FluentEmailApiDemo.src.Interfaces;
@@ -14,9 +13,7 @@
     using Interfaces.EmailSequenceInterfaces;
     using RazorEngine;
     using RazorEngine.Templating;
-    using MoreLinq;
     using System.Threading.Tasks;
-    using System.Threading;
 
     public class EmailCourier :
                                ISendBulk,
@@ -29,10 +26,8 @@
                                ISendBulkEmail
     {
         private static readonly IEmailConfig _emailConfig;
-
-        private static EmailCourier _courier;
-
         private readonly Guid _templateKey = Guid.NewGuid();
+
         private string _path;
         private string _template;
 
@@ -43,10 +38,13 @@
 
         static EmailCourier()
         {
-            _courier = new EmailCourier();
             _emailConfig = CreateEmailConfig();
         }
 
+        public static IEmailToSequence Init()
+        {
+            return new EmailCourier();
+        }
 
         public ISendBulkEmail WithTemplateForBulk(string templatePath, string templateFilename)
         {

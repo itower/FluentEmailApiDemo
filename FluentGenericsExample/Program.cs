@@ -8,27 +8,25 @@
     using System.Security.Policy;
     using System.Threading.Tasks;
     using FluentGenericApiDemo.src.Models;
+    using GenericsEmailDemo;
     using GenericsEmailDemo.src.Models;
 
     class Program
     {
         static void Main(string[] args)
         {
+            SetAppDomainPermissions();
+            RazorGeneratorMvcStart.Start();
             AsyncMain().Wait();
         }
 
         static async Task AsyncMain()
         {
-            SetAppDomainPermissions();
-
             await SendCustomWithGenericReturnType();
-
+        
             Console.WriteLine("Sending hello email with template");
 
-
-            var emailCourier = new EmailCourier();
-
-            await emailCourier.To("fakefluentapi@gmail.com")
+            await EmailCourier.Init().To("fakefluentapi@gmail.com")
                                               .Cc("fakefluentapi@gmail.com")
                                               .From("fakefluentapi@gmail.com")
                                               .Subject("Hello")
@@ -39,7 +37,7 @@
 
             Console.WriteLine("Sending fluent email with template");
 
-            await emailCourier.To("fakefluentapi@gmail.com")
+            await EmailCourier.Init().To("fakefluentapi@gmail.com")
                                   .Cc("itower99@gmail.com")
                                   .From("fakefluentapi@gmail.com")
                                   .Subject("Hello")
@@ -59,7 +57,6 @@
 
         public static async Task SendBulk()
         {
-            var emailCourier = new EmailCourier();
             var emails = new List<EmailSendBulk>()
             {
                 new EmailSendBulk() {Cc ="fakefluentapi@gmail.com", From ="fakefluentapi@gmail.com", Name="Hello", Subject= "Hello", To = "fakefluentapi@gmail.com" },
@@ -84,16 +81,14 @@
                 new EmailSendBulk() {Cc ="fakefluentapi@gmail.com", From ="fakefluentapi@gmail.com", Name="Hello", Subject= "Hello", To = "fakefluentapi@gmail.com"  }
             };
 
-            await emailCourier.WithTemplateForBulk(AppDomain.CurrentDomain.BaseDirectory, "/src/Emails/HelloEmail.cshtml").SendBulk(emails);
+            await EmailCourier.Init().WithTemplateForBulk(AppDomain.CurrentDomain.BaseDirectory, "/src/Emails/HelloEmail.cshtml").SendBulk(emails);
         }
 
         private static async Task SendCustomWithNoReturnType()
         {
             var customEmail = new CustomEmail() { Name = "Custom Test" };
 
-            var emailCourier = new EmailCourier();
-
-            await emailCourier.To("fakefluentapi@gmail.com")
+            await EmailCourier.Init().To("fakefluentapi@gmail.com")
                                               .Cc("fakefluentapi@gmail.com")
                                               .From("fakefluentapi@gmail.com")
                                               .Subject("Hello")
@@ -113,9 +108,7 @@
         {
             var customEmail = new CustomEmail() { Name = "Custom Test" };
 
-            var emailCourier = new EmailCourier();
-
-            return await emailCourier.To("fakefluentapi@gmail.com")
+            return await EmailCourier.Init().To("fakefluentapi@gmail.com")
                                               .Cc("fakefluentapi@gmail.com")
                                               .From("fakefluentapi@gmail.com")
                                               .Subject("Hello")

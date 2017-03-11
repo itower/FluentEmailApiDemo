@@ -13,6 +13,7 @@
     public interface IEmailToSequence
     {
         IEmailCcSequence To(string to);
+        ISendBulkEmail WithTemplateForBulk(string templatePath, string templateFilename);
     }
 
     public interface IEmailFromSequence

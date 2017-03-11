@@ -1,6 +1,10 @@
-﻿@* Generator: Template *@
+﻿@*
+    Generator: MvcHelper
+    GeneratePrettyNames : true
+*@
+@using FluentGenericApiDemo.src.Models;
 @functions {
-    public dynamic Number { get; set; }
+    public FluentEmailBody Body { get; set; }
 }
 
-<p> Hello user #@Number</p>
+<p> Hello user #@Model.Number</p>
